@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
+
+:root {
+  --borderWidth: 3px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* flex-wrap: nowrap; */
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.container .text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5rem;
+  font-family: "Pixelify Sans", cursive;
+  color: rgb(51, 130, 195);
+  gap: 1rem;
+  text-align: center;
+  width: fit-content;
+}
+
+.temp-conv {
+  width: 50%;
+  height: auto;
+  padding: 4rem;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.53);
+  border-radius: 12px;
+  flex-direction: column;
+}
+
+.col {
+  display: grid;
+  grid-template-columns: 2;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  font-family: "Montserrat";
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+input {
+  text-align: center;
+  border: none;
+  padding: 1rem;
+  width: 25rem;
+  height: 4rem;
+  font-family: "Montserrat";
+  color: #343434;
+}
+
+/* ****************** ANIMATED BACKGROUND ****************** */
+
+.mesh-test {
+  background-color: hsla(178, 100%, 81%, 1);
+  background-image: radial-gradient(
+      at 15% 100%,
+      hsla(195, 47%, 56%, 0.42) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 81% 7%, hsla(187, 100%, 93%, 1) 0px, transparent 50%),
+    radial-gradient(at 6% 8%, hsla(60, 100%, 91%, 1) 0px, transparent 50%),
+    radial-gradient(at 91% 91%, hsla(225, 70%, 56%, 0.36) 0px, transparent 50%);
+
+  animation: gradient 13s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 20%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 70%;
+  }
+  100% {
+    background-position: 0% 20%;
+  }
+}
+
+/* ****************** Input Effects ****************** */
+
+input {
+  /* border: 1px solid #ccc; */
+  padding: 7px 14px 9px;
+  transition: 0.4s;
+  box-shadow: 2px 2px 5px 2px rgba(33, 15, 57, 0.1);
+  box-sizing: border-box;
+  border: 2px solid rgb(158, 174, 255);
+  border-width: 0px 2px 2px 0px;
+  transition: all 0.5s;
+}
+
+input:focus {
+  outline: none;
+  border-image: linear-gradient(to right, #0815d1 0%, #c938dc 100%) 1;
+  border-width: 0px 2px 2px 0px;
+  transform: scale(1.05);
+}
+
+/* ****************** MEDIA QUERIES ****************** */
+@media (max-width: 650px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 520px) {
+  .container .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: "Pixelify Sans", cursive;
+    color: rgb(51, 130, 195);
+    gap: 1rem;
+  }
+
+  .col {
+    font-size: 1.5rem;
+  }
+
+  input {
+    width: 15rem;
+    height: 3rem;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 355px) {
+  .text {
+    font-size: 1rem;
+  }
+}
